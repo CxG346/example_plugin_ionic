@@ -64,23 +64,22 @@ export class HomePage {
   async testNewOpen() {
     const options: NewOpenWebOptions = {
       url: 'https://wikipedia.com',
-      title: 'Mi Navegador Test',
+      title: 'Test',
       showShareButton: true,
       showDownloadButton: true,
       showNavigationButtons: true,
       toolbarType: ToolBarType.NAVIGATION,
+      customTextShareButton: "Custom",
+      colorShareButton: "red"
     };
+
+    console.log('options', options);
 
     try {
       await InAppBrowser.openWeb(options);
 
       await InAppBrowser.addListener('shareButtonClicked', () => {
-        console.log('El botón de compartir fue presionado');
         alert('El botón de compartir fue presionado Porfin');
-      });
-
-      await InAppBrowser.addListener('downloadButtonClicked', () => {
-        alert('El botón de download fue presionado Porfin');
       });
     } catch (error) {
       console.error('Failed to open browser:', error);
