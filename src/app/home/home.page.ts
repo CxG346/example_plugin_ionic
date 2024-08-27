@@ -70,7 +70,12 @@ export class HomePage {
       showNavigationButtons: true,
       toolbarType: ToolBarType.NAVIGATION,
       customTextShareButton: "Custom",
-      colorShareButton: "red"
+      colorShareButton: "red",
+      colorShareText: "blue",
+      shareFunction: false,
+      printFunction: false,
+      colorTitle: "green",
+      browserPosition: "bottom"
     };
 
     console.log('options', options);
